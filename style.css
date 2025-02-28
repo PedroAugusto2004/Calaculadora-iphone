@@ -3,83 +3,87 @@
     margin: 0;
     padding: 0;
     user-select: none;
-  }
-  
-  body {
+}
+
+body {
     font-family: "Helvetica Neue", sans-serif;
     margin: 25px;
-  }
-  
-  .calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
     background: black;
-    border-radius: 50px;
+    border-radius: 20px;
     color: white;
-    height: 1218px;
+    height: 700px;
     padding: 20px;
     position: relative;
-    width: 563px;
-  }
-  
-  .top-container {
+    width: 300px;
+}
+
+.top-container {
     display: flex;
-    height: 250px;
+    height: 100px;
     justify-content: space-between;
-    padding: 0 20px;
-  }
-  
-  .value {
-    font-size: 130px;
+    padding: 0 10px;
+}
+
+.value {
+    font-size: 60px;
     font-weight: 300;
-    height: 158px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    height: 80px;
+    margin-bottom: 10px;
+    margin-right: 10px;
     text-align: right;
-  }
-  
-  .buttons-container {
+}
+
+.buttons-container {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 10px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-  }
-  
-  .button {
+}
+
+.button {
     align-items: center;
     background: #333;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
-    font-size: 45px;
-    height: 110px;
+    font-size: 20px;
+    height: 60px;
     justify-content: center;
     transition: filter .3s;
-    width: 110px;
-  }
-  
-  .button.function {
+    width: 60px;
+}
+
+.button.function {
     color: black;
     background: #a5a5a5;
-  }
-  
-  .button.operator {
+}
+
+.button.operator {
     background: #f1a33c;
-  }
-  
-  .button.number-0 {
-    border-radius: 55px;
+}
+
+.button.number-0 {
+    border-radius: 30px;
     grid-column: 1 / span 2;
     justify-content: flex-start;
-    padding-left: 43px;
-    width: 250px;
-  }
-  
-  .button:active,
-  .button:focus {
+    padding-left: 20px;
+    width: 140px;
+}
+
+.button:active,
+.button:focus {
     filter: brightness(120%);
-  }
-  
-  .bottom {
-    width: 200px;
+}
+
+.bottom {
+    width: 100px;
     height: 5px;
     background: white;
     border-radius: 4px;
@@ -87,4 +91,28 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-  }
+}
+
+/* Media queries for mobile optimization */
+@media (max-width: 600px) {
+    .calculator {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .value {
+        font-size: 40px;
+        height: auto;
+    }
+
+    .button {
+        font-size: 16px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .button.number-0 {
+        width: calc(50% - 10px);
+    }
+}
